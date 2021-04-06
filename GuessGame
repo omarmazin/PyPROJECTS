@@ -1,0 +1,11 @@
+import random
+
+ls = [1,2,3,4,5,6,7,8,9]
+ran = random.choice(ls)
+enter = int(input('Guess The number >> '))
+if enter == ran:
+  print('Congratulation >>'+str(ran))
+elif enter > ran:
+  print('The number is upper ')
+elif enter < ran:
+  print('The number is lower')
