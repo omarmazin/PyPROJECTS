@@ -1,0 +1,22 @@
+@@ -0,0 +1,21 @@
+# need 1 file == word.txt => for reading lines
+words = open('words.txt','r').read().splitlines()
+men = open('Mention.txt','a')
+hash = open('Hashtag.txt','a')
+def mode1():
+    for h in words:
+        res = ('#'+h+'\n')
+        hash.write(res)
+        print('Done')
+def mode2():
+    for hw in words:
+        res = ('@'+hw+'\n')
+        men.write(res)
+mode = input('Enter mode \n 1 = # \n 2 = @\n >>')
+if mode == '1':
+    mode1()
+elif mode == '2':
+    mode2()
+else:
+    print('error ')
+    quit()
