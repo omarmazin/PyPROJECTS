@@ -1,0 +1,21 @@
+import requests
+import os
+fmain = open('main.txt','r').readline()
+fpath = open('list.txt','r').read().splitlines()
+mode = int(input('\n 1 == Check PATH \n 2 == Check ping site \n >> :'))
+if mode ==1:
+    for flick in fpath:
+        url = f'{fmain}{flick}'
+        uu = requests.get(url)
+        print(f'{url} - {uu.status_code}')
+elif mode ==2:
+    try:
+        lmain = open('main.txt', 'r').read().splitlines()
+        for me in lmain:
+            iL = os.system(f'ping {me}')
+            print(f''' 
+            {me} - {iL} ''')
+    except:
+        print(f'Error >> {me}')
+
+
