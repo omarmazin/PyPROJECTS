@@ -1,0 +1,9 @@
+import requests
+ip = ""
+
+response = requests.get(f"http://ip-api.com/json/{ip}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,mobile,proxy,hosting,query")
+data = response.json()
+
+country = data['city']
+reg = data['regionName']
+print(response)
